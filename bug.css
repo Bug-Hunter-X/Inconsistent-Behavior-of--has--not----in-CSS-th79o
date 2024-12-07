@@ -1,0 +1,14 @@
+The following CSS code snippet demonstrates an uncommon error related to the `:has()` pseudo-class in combination with the `:not()` pseudo-class:
+
+```css
+.container:has(:not(.item)) {
+  background-color: lightblue;
+}
+.item {
+  background-color: lightcoral;
+}
+```
+
+This code intends to style the `.container` element only if it does not contain any elements with the class `item`. However, this specific combination can lead to unexpected behavior in some browsers due to the interaction between `:has()` and `:not()`.  The selector may not accurately identify containers lacking `.item` elements. This can result in incorrect styling or unexpected layout.
+
+The root of the problem lies in how some browsers interpret the negation within the `:has()` context. The intended behavior might not be consistently implemented.
