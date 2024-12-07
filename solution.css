@@ -1,0 +1,12 @@
+The solution involves avoiding the combination of `:has()` and `:not()` and instead using a more reliable approach that leverages the `:empty` pseudo-class:
+
+```css
+.container:empty {
+  background-color: lightblue;
+}
+.item {
+  background-color: lightcoral;
+}
+```
+
+This revised code directly targets empty containers, ensuring consistent and predictable results across different browsers.  The `:empty` pseudo-class is well-supported and accurately identifies elements without any children. This removes the ambiguity and inconsistent behavior associated with the `:has(:not())` combination.
